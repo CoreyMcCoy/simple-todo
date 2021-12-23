@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;800;900&display=swap');
+
+*,
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #101011 !important;
+}
+
+h1 {
+  color: aliceblue;
+  font-weight: 900 !important;
+}
+
+p {
+  color: aliceblue;
+  font-weight: 200 !important;
+}
+
+div,
+input.input-group {
+  cursor: pointer;
+}
+
+input {
+  background-color: #101011 !important;
+  cursor: pointer;
+}
+
+span {
+  background-color: #101011 !important;
+}
+
+span i {
+  color: aliceblue;
+}
+
+input::placeholder {
+  letter-spacing: 1px;
+  color: aliceblue !important;
+}
+
+input.form-control:focus {
+  color: aliceblue;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+select.form-select {
+  letter-spacing: 1px;
+  background-color: #101011 !important;
+  color: aliceblue !important;
+  outline: none !important;
+  box-shadow: none !important;
+  cursor: pointer;
+}
+
+div > p.list-group-item {
+  font-style: italic;
+  color: rgb(158, 158, 158);
+  font-size: 15px;
+  font-weight: 400 !important;
+  letter-spacing: 1px;
+}
+
+li {
+  list-style: none;
+  color: aliceblue;
+  margin: 3px 0;
+  transition: color 0.3s ease-in-out;
+}
+
+.completed {
+  text-decoration: rgb(228, 127, 127) line-through !important;
+  color: rgb(228, 127, 127) !important;
+}
