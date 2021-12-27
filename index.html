@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TODO App</title>
+
+    <!-- CSS stylesheet -->
     <link rel="stylesheet" href="./styles.css" />
+
+    <!-- Google font link -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;800;900&display=swap" rel="stylesheet" />
 
     <!-- Bootstrap start -->
@@ -15,11 +18,11 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <!-- Bootstrap end -->
 
     <!-- FontAwesome start-->
     <script src="https://kit.fontawesome.com/b220f567c7.js" crossorigin="anonymous"></script>
-    <!-- Font Awesome end -->
+
+    <title>TODO App</title>
   </head>
   <body>
     <div class="container-lg mt-5" style="width: 600px">
@@ -28,28 +31,25 @@
       </header>
 
       <!-- Input Todo items -->
-      <div class="input-section d-md-flex gap-2">
+      <form class="input-section d-md-flex gap-2" id="form">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" id="add-todo" placeholder="Add a todo" />
-          <span class="input-group-text" id="add-button"> <i class="fas fa-plus-square"></i></span>
+          <input type="text" class="form-control" id="input-field" placeholder="Add a todo" />
+          <button class="btn btn-light input-group-text" type="submit" id="add-button"><i class="fas fa-plus-square"></i></button>
         </div>
-        <div>
-          <select name="todos" class="form-select filter-todo">
+        <!-- Filter select -->
+        <!-- <div>
+          <select name="todos" class="form-select filter-todos">
             <option value="all">All</option>
             <option value="completed">Completed</option>
             <option value="uncompleted">Uncompleted</option>
           </select>
-        </div>
-      </div>
+        </div> -->
+      </form>
 
       <!-- List of Todo items -->
       <div class="container-lg todo-container">
-        <p class="list-group-item mt-3">Something like..."tell the developer this is rad!"</p>
-        <ul class="list-group" id="todo-list">
-          <li class="list-group-item">Item 1</li>
-          <li class="list-group-item">Item 2</li>
-          <li class="list-group-item completed">Item 3</li>
-        </ul>
+        <p class="mt-3 alert-text">Add something like..."tell the developer this is rad!"</p>
+        <ul class="list-group" id="todo-list"></ul>
       </div>
     </div>
 

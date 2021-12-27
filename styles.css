@@ -18,8 +18,10 @@ h1 {
 }
 
 p {
-  color: aliceblue;
+  color: rgba(240, 248, 255, 0.651);
   font-weight: 200 !important;
+  letter-spacing: 1px;
+  font-style: italic;
 }
 
 div,
@@ -32,12 +34,16 @@ input {
   cursor: pointer;
 }
 
-span {
+button {
   background-color: #101011 !important;
 }
 
-span i {
+button i {
   color: aliceblue;
+}
+
+button:focus {
+  box-shadow: none !important;
 }
 
 input::placeholder {
@@ -47,7 +53,6 @@ input::placeholder {
 
 input.form-control:focus {
   color: aliceblue;
-  outline: none !important;
   box-shadow: none !important;
 }
 
@@ -55,7 +60,6 @@ select.form-select {
   letter-spacing: 1px;
   background-color: #101011 !important;
   color: aliceblue !important;
-  outline: none !important;
   box-shadow: none !important;
   cursor: pointer;
 }
@@ -72,10 +76,10 @@ li {
   list-style: none;
   color: aliceblue;
   margin: 3px 0;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.2s ease;
 }
 
 .completed {
-  text-decoration: rgb(228, 127, 127) line-through !important;
-  color: rgb(228, 127, 127) !important;
+  /* text-decoration: rgb(190, 190, 190) line-through !important; */
+  color: rgb(196, 196, 196) !important;
 }
