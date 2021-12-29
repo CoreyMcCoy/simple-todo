@@ -12,6 +12,9 @@ body {
   background-color: #101011 !important;
 }
 
+div#main-container {
+  padding-top: 3rem;
+}
 h1 {
   color: aliceblue;
   font-weight: 900 !important;
@@ -34,7 +37,7 @@ input {
   cursor: pointer;
 }
 
-button {
+button.input-group-text {
   background-color: #101011 !important;
 }
 
@@ -56,14 +59,6 @@ input.form-control:focus {
   box-shadow: none !important;
 }
 
-select.form-select {
-  letter-spacing: 1px;
-  background-color: #101011 !important;
-  color: aliceblue !important;
-  box-shadow: none !important;
-  cursor: pointer;
-}
-
 div > p.list-group-item {
   font-style: italic;
   color: rgb(158, 158, 158);
@@ -72,14 +67,42 @@ div > p.list-group-item {
   letter-spacing: 1px;
 }
 
-li {
-  list-style: none;
-  color: aliceblue;
-  margin: 3px 0;
-  transition: color 0.2s ease;
+.todo-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.todo {
+  transition: all 0.5s ease;
 }
 
 .completed {
-  /* text-decoration: rgb(190, 190, 190) line-through !important; */
-  color: rgb(196, 196, 196) !important;
+  text-decoration: rgb(29, 29, 29) line-through;
+  opacity: 0.2;
+}
+
+.fall-off {
+  transform: translateY(200px);
+  opacity: 0;
+}
+
+li.list-group-item {
+  margin: 5px 0;
+  background-color: rgba(0, 0, 0, 0) !important;
+  border: 1px solid aliceblue !important;
+  list-style: none;
+  color: aliceblue;
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+
+select.form-select {
+  letter-spacing: 1px;
+  background-color: #101011 !important;
+  color: aliceblue !important;
+  box-shadow: none !important;
+  cursor: pointer;
 }
