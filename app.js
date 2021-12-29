@@ -15,28 +15,32 @@ select.addEventListener('change', filterTodos);
 function addTodo(e) {
   e.preventDefault();
 
-  const todoDiv = document.createElement('div');
-  todoDiv.classList.add('todo', 'd-flex', 'justify-content-between', 'align-items-center', 'gap-2');
+  if (input.value === '') {
+    launchModal();
+  } else {
+    const todoDiv = document.createElement('div');
+    todoDiv.classList.add('todo', 'd-flex', 'justify-content-between', 'align-items-center', 'gap-2');
 
-  const todoItem = document.createElement('li');
-  todoItem.classList.add('list-group-item', 'flex-grow-1');
-  todoItem.innerText = input.value;
-  todoDiv.appendChild(todoItem);
-  saveLocalTodos(input.value);
+    const todoItem = document.createElement('li');
+    todoItem.classList.add('list-group-item', 'flex-grow-1');
+    todoItem.innerText = input.value;
+    todoDiv.appendChild(todoItem);
+    saveLocalTodos(input.value);
 
-  const checkBtn = document.createElement('button');
-  checkBtn.classList.add('complete-btn', 'btn', 'btn-dark', 'border', 'border-light', 'mr-2');
-  checkBtn.innerHTML = '<i class="fas fa-check"></i>';
-  todoDiv.appendChild(checkBtn);
+    const checkBtn = document.createElement('button');
+    checkBtn.classList.add('complete-btn', 'btn', 'btn-dark', 'btn-sm', 'border', 'border-light', 'rounded-circle', 'mr-2');
+    checkBtn.innerHTML = '<i class="fas fa-check"></i>';
+    todoDiv.appendChild(checkBtn);
 
-  const deleteBtn = document.createElement('button');
-  deleteBtn.classList.add('trash-btn', 'btn', 'btn-dark', 'border', 'border-light', 'mr-2');
-  deleteBtn.innerHTML = '<i class="fas fa-trash"></i>';
-  todoDiv.appendChild(deleteBtn);
+    const deleteBtn = document.createElement('button');
+    deleteBtn.classList.add('trash-btn', 'btn', 'btn-dark', 'btn-sm', 'border', 'border-light', 'rounded-circle', 'mr-2');
+    deleteBtn.innerHTML = '<i class="fas fa-trash"></i>';
+    todoDiv.appendChild(deleteBtn);
 
-  ul.appendChild(todoDiv);
+    ul.appendChild(todoDiv);
 
-  input.value = '';
+    input.value = '';
+  }
 }
 
 //Remove a todo
@@ -122,12 +126,12 @@ function getTodos() {
     todoDiv.appendChild(todoItem);
 
     const checkBtn = document.createElement('button');
-    checkBtn.classList.add('complete-btn', 'btn', 'btn-dark', 'border', 'border-light', 'mr-2');
+    checkBtn.classList.add('complete-btn', 'btn', 'btn-dark', 'btn-sm', 'border', 'border-light', 'rounded-circle', 'mr-2');
     checkBtn.innerHTML = '<i class="fas fa-check"></i>';
     todoDiv.appendChild(checkBtn);
 
     const deleteBtn = document.createElement('button');
-    deleteBtn.classList.add('trash-btn', 'btn', 'btn-dark', 'border', 'border-light', 'mr-2');
+    deleteBtn.classList.add('trash-btn', 'btn', 'btn-dark', 'btn-sm', 'border', 'border-light', 'rounded-circle', 'mr-2');
     deleteBtn.innerHTML = '<i class="fas fa-trash"></i>';
     todoDiv.appendChild(deleteBtn);
 
@@ -146,4 +150,13 @@ function removeLocalTodos(todo) {
   const todoIndex = todo.children[0].innerText;
   todos.splice(todos.indexOf(todoIndex), 1);
   localStorage.setItem('todos', JSON.stringify(todos));
+}
+
+function launchModal() {
+  const modal = document.querySelector('.modal');
+  modal.classList.add('d-block', 'show');
+  const closeBtn = document.querySelector('.close-btn');
+  closeBtn.addEventListener('click', () => {
+    modal.classList.remove('d-block', 'show');
+  });
 }
