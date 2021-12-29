@@ -10,14 +10,14 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-color: #101011 !important;
+  font-size: 0.8rem;
 }
 
 div#main-container {
-  max-width: 550px;
-  min-width: 480px;
   padding-top: 3rem;
 }
 h1 {
+  font-size: 2.2rem;
   color: aliceblue;
   font-weight: 900 !important;
 }
@@ -52,6 +52,7 @@ button:focus {
 }
 
 input::placeholder {
+  font-size: 0.75rem;
   letter-spacing: 1px;
   color: aliceblue !important;
 }
@@ -102,8 +103,10 @@ li.list-group-item {
 }
 
 select.form-select {
+  padding: 9px;
   letter-spacing: 1px;
   background-color: #101011 !important;
+  font-size: 0.75rem;
   color: aliceblue !important;
   box-shadow: none !important;
   cursor: pointer;
