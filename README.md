@@ -34,4 +34,3 @@ Create functions
 
 7. getTodos() - Checks local storage for todos, then creates the todo item (similar to addTodo()) and displays them after the document loads.
 
-## In the wild
