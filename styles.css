@@ -13,6 +13,8 @@ body {
 }
 
 div#main-container {
+  max-width: 550px;
+  min-width: 480px;
   padding-top: 3rem;
 }
 h1 {
