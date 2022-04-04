@@ -28,12 +28,13 @@ function addTodo(e) {
     saveLocalTodos(input.value);
 
     const checkBtn = document.createElement('button');
-    checkBtn.classList.add('complete-btn', 'btn', 'btn-dark', 'btn-sm', 'border', 'border-light', 'rounded-circle', 'mr-2');
+    // checkBtn.classList.add('btn', 'complete-btn', 'btn-styles', 'btn-sm', 'mr-2');
+    checkBtn.classList.add('complete-btn', 'btn', 'btn-styles', 'btn-sm');
     checkBtn.innerHTML = '<i class="fas fa-check"></i>';
     todoDiv.appendChild(checkBtn);
 
     const deleteBtn = document.createElement('button');
-    deleteBtn.classList.add('trash-btn', 'btn', 'btn-dark', 'btn-sm', 'border', 'border-light', 'rounded-circle', 'mr-2');
+    deleteBtn.classList.add('trash-btn', 'btn', 'btn-styles', 'btn-sm');
     deleteBtn.innerHTML = '<i class="fas fa-trash"></i>';
     todoDiv.appendChild(deleteBtn);
 
@@ -155,6 +156,7 @@ function removeLocalTodos(todo) {
 function launchModal() {
   const modal = document.querySelector('.modal');
   modal.classList.add('d-block', 'show');
+  document.body.style.backgroundColor = 'rgba(0,0,0,0.4)';
   const closeBtn = document.querySelector('.close-btn');
   closeBtn.addEventListener('click', () => {
     modal.classList.remove('d-block', 'show');

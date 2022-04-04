@@ -1,32 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;800;900&display=swap');
 
+:root {
+  --color-primary: #4557f6;
+  --color-white: #fff;
+  --color-bg-white: #fcfcfc;
+  --text-color-dark: #020202;
+  --text-color-gray: #7a7a7a;
+  --modal-overlay-bg: rgba(0, 0, 0, 0.65);
+}
+
 *,
 body {
   font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: #101011 !important;
+  padding: 0 10px;
+  background-color: var(--color-white) !important;
   font-size: 0.9rem;
 }
 
-div#main-container {
-  padding-top: 3rem;
-}
 h1 {
   font-size: 2.2rem;
-  color: aliceblue;
-  font-weight: 900 !important;
+  color: var(--color-primary);
 }
 
 p {
-  color: rgba(240, 248, 255, 0.651);
-  font-weight: 200 !important;
+  color: var(--text-color-dark);
   letter-spacing: 1px;
-  font-style: italic;
 }
 
 div,
@@ -35,16 +38,18 @@ input.input-group {
 }
 
 input {
-  background-color: #101011 !important;
+  height: 43px;
+  background-color: var(--color-white) !important;
   cursor: pointer;
 }
 
 button.input-group-text {
-  background-color: #101011 !important;
+  background-color: var(--color-primary) !important;
+  border: 1px solid var(--color-primary) !important;
 }
 
 button i {
-  color: aliceblue;
+  color: var(--color-bg-white);
 }
 
 button:focus {
@@ -52,27 +57,14 @@ button:focus {
 }
 
 input::placeholder {
-  font-size: 0.75rem;
-  letter-spacing: 1px;
-  color: aliceblue !important;
+  font-size: 0.9rem;
+  color: var(--text-color-gray) !important;
 }
 
 input.form-control:focus {
-  color: aliceblue;
+  color: var(--text-color-dark) !important;
+  font-size: 0.9rem;
   box-shadow: none !important;
-}
-
-div > p.list-group-item {
-  font-style: italic;
-  color: rgb(158, 158, 158);
-  font-size: 15px;
-  font-weight: 400 !important;
-  letter-spacing: 1px;
-}
-
-.todo-container {
-  display: flex;
-  flex-direction: column;
 }
 
 .todo {
@@ -80,21 +72,20 @@ div > p.list-group-item {
 }
 
 .completed {
-  text-decoration: rgb(29, 29, 29) line-through;
-  opacity: 0.2;
+  text-decoration: var(--text-color-gray) line-through;
+  opacity: 0.75;
 }
 
 .fall-off {
-  transform: translateY(200px);
+  transform: translateY(25px);
   opacity: 0;
 }
 
 li.list-group-item {
-  margin: 5px 0;
-  background-color: rgba(0, 0, 0, 0) !important;
-  border: 1px solid aliceblue !important;
+  margin: 10px 0;
+  background-color: var(--color-white)!important;
   list-style: none;
-  color: aliceblue;
+  color: var(--text-color-dark);
 }
 
 .fa-trash,
@@ -103,11 +94,36 @@ li.list-group-item {
 }
 
 select.form-select {
+  height: 43px;
   padding: 9px;
   letter-spacing: 1px;
-  background-color: #101011 !important;
-  font-size: 0.75rem;
-  color: aliceblue !important;
+  background-color: var(--color-white) !important;
+  font-size: 0.9rem;
+  color: var(--text-color-dark) !important;
   box-shadow: none !important;
   cursor: pointer;
+}
+
+.close-btn{
+  background-color: var(--color-primary) !important;
+}
+
+.btn-styles {
+  background-color: var(--color-primary) !important;
+  color: var(--color-bg-white) !important;
+  padding: 8px 10px;
+}
+
+h6{
+  color: var(--text-color-dark);
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+.modal-overlay {
+  background-color: var(--modal-overlay-bg);
+}
+
+.modal-content {
+  margin-top: 10rem;
 }
