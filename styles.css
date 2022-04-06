@@ -16,6 +16,7 @@ body {
 }
 
 body {
+  height: 100vh;
   margin: 0;
   padding: 0 10px;
   background-color: var(--color-white) !important;
@@ -111,7 +112,7 @@ select.form-select {
 .btn-styles {
   background-color: var(--color-primary) !important;
   color: var(--color-bg-white) !important;
-  padding: 8px 10px;
+  padding: 8px 10px !important;
 }
 
 h6{

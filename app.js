@@ -10,6 +10,7 @@ button.addEventListener('click', addTodo);
 ul.addEventListener('click', removeTodo);
 ul.addEventListener('click', completeTodo);
 select.addEventListener('change', filterTodos);
+body.addEventListener('click', saveLocalEdit);
 
 // Add a todo
 function addTodo(e) {
@@ -28,7 +29,6 @@ function addTodo(e) {
     saveLocalTodos(input.value);
 
     const checkBtn = document.createElement('button');
-    // checkBtn.classList.add('btn', 'complete-btn', 'btn-styles', 'btn-sm', 'mr-2');
     checkBtn.classList.add('complete-btn', 'btn', 'btn-styles', 'btn-sm');
     checkBtn.innerHTML = '<i class="fas fa-check"></i>';
     todoDiv.appendChild(checkBtn);
@@ -108,6 +108,23 @@ function saveLocalTodos(todo) {
   localStorage.setItem('todos', JSON.stringify(todos));
 }
 
+// save edits to local storage
+function saveLocalEdit(todo, newTodo) {
+  //Check to see if item exist
+  let todos;
+  if (localStorage.getItem('todos') === null) {
+    todos = [];
+  } else {
+    todos = JSON.parse(localStorage.getItem('todos'));
+  }
+  todos.forEach((todo, index) => {
+    if (todo === newTodo) {
+      todos.splice(index, 1, todo);
+    }
+  });
+  localStorage.setItem('todos', JSON.stringify(todos));
+}
+
 //Get todos from local storage
 function getTodos() {
   let todos;
@@ -127,12 +144,12 @@ function getTodos() {
     todoDiv.appendChild(todoItem);
 
     const checkBtn = document.createElement('button');
-    checkBtn.classList.add('complete-btn', 'btn', 'btn-dark', 'btn-sm', 'border', 'border-light', 'rounded-circle', 'mr-2');
+    checkBtn.classList.add('complete-btn', 'btn', 'btn-styles', 'btn-sm');
     checkBtn.innerHTML = '<i class="fas fa-check"></i>';
     todoDiv.appendChild(checkBtn);
 
     const deleteBtn = document.createElement('button');
-    deleteBtn.classList.add('trash-btn', 'btn', 'btn-dark', 'btn-sm', 'border', 'border-light', 'rounded-circle', 'mr-2');
+    deleteBtn.classList.add('trash-btn', 'btn', 'btn-styles', 'btn-sm');
     deleteBtn.innerHTML = '<i class="fas fa-trash"></i>';
     todoDiv.appendChild(deleteBtn);
 
